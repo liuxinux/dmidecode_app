@@ -5175,6 +5175,7 @@ static void dmi_table_decode(u8 *buf, u32 len, u16 num, u16 ver, u32 flags)
 		struct dmi_header h;
 		int display;
 
+        printf("%s:%d:liuxin#2: i=%d \n",__func__,__LINE__,i);
         printf("%s:%d:liuxin#2: data=%s \n",__func__,__LINE__,data);
 		to_dmi_header(&h, data);
         printf("%s:%d:liuxin#2: h.type=%d \n",__func__,__LINE__,h.type);
@@ -5186,6 +5187,7 @@ static void dmi_table_decode(u8 *buf, u32 len, u16 num, u16 ver, u32 flags)
 			&& !((opt.flags & FLAG_QUIET) && (h.type == 126 || h.type == 127))
 			&& !opt.string);
 
+        printf("%s:%d:liuxin#2: display=%d \n",__func__,__LINE__,display);
 		/*
 		 * If a short entry is found (less than 4 bytes), not only it
 		 * is invalid, but we cannot reliably locate the next entry.
@@ -5216,11 +5218,13 @@ static void dmi_table_decode(u8 *buf, u32 len, u16 num, u16 ver, u32 flags)
 				h.handle, h.type, h.length);
 
 		/* Look for the next handle */
+        printf("%s:%d:liuxin#2: next1=%s \n",__func__,__LINE__,next);
 		next = data + h.length;
 		while ((unsigned long)(next - buf + 1) < len
 		    && (next[0] != 0 || next[1] != 0))
 			next++;
 		next += 2;
+        printf("%s:%d:liuxin#2: next2=%s \n",__func__,__LINE__,next);
 
 		/* Make sure the whole structure fits in the table */
 		if ((unsigned long)(next - buf) > len)
