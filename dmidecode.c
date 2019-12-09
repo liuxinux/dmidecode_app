@@ -5218,8 +5218,8 @@ static void dmi_table_decode(u8 *buf, u32 len, u16 num, u16 ver, u32 flags)
 				h.handle, h.type, h.length);
 
 		/* Look for the next handle */
-        printf("%s:%d:liuxin#2: next1=%s \n",__func__,__LINE__,next);
 		next = data + h.length;
+        printf("%s:%d:liuxin#2: next1=%s \n",__func__,__LINE__,next);
 		while ((unsigned long)(next - buf + 1) < len
 		    && (next[0] != 0 || next[1] != 0))
 			next++;
