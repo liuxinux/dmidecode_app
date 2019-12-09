@@ -5283,6 +5283,7 @@ static void dmi_table(off_t base, u32 len, u16 num, u32 ver, const char *devmem,
 		       SUPPORTED_SMBIOS_VER & 0xFF);
 	}
 
+    printf("%s:%d:liuxin#2: opt.type=%s \n",__func__,__LINE__,opt.type);
 	if (!(opt.flags & FLAG_QUIET))
 	{
 		if (opt.type == NULL)
