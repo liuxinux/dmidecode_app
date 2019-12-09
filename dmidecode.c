@@ -5681,7 +5681,6 @@ int main(int argc, char * const argv[])
 		if (size >= 24 && memcmp(buf, "_SM3_", 5) == 0)
 		{
             printf("%s:%d:liuxin#2:buf=%s\n",__func__,__LINE__,buf);
-            printf("%s:%d:liuxin#2:buf[0]=%s\n",__func__,__LINE__,buf[0]);
 			if (smbios3_decode(buf, SYS_TABLE_FILE, FLAG_NO_FILE_OFFSET))
 				found++;
 		}
