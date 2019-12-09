@@ -5404,6 +5404,8 @@ static int smbios3_decode(u8 *buf, const char *devmem, u32 flags)
 		       buf[0x07], buf[0x08], buf[0x09]);
 
 	offset = QWORD(buf + 0x10);
+    printf("%s:%d:liuxin#2: offset.h=0x%x\n",__func__,__LINE__,offset.h);
+    printf("%s:%d:liuxin#2: offset.l=0x%x\n",__func__,__LINE__,offset.l);
 	if (!(flags & FLAG_NO_FILE_OFFSET) && offset.h && sizeof(off_t) < 8)
 	{
 		fprintf(stderr, "64-bit addresses not supported, sorry.\n");
@@ -5629,7 +5631,6 @@ int main(int argc, char * const argv[])
 		goto exit_free;
 	}
 
-    
     printf("%s:%d:liuxin#:opt.flags=0x%x\n",__func__,__LINE__,opt.flags);
 	if (opt.flags & FLAG_HELP)
 	{
