@@ -5177,6 +5177,7 @@ static void dmi_table_decode(u8 *buf, u32 len, u16 num, u16 ver, u32 flags)
 
         printf("%s:%d:liuxin#2: data=%s \n",__func__,__LINE__,data);
 		to_dmi_header(&h, data);
+        printf("%s:%d:liuxin#2: h.length=%d \n",__func__,__LINE__,h.length);
 		display = ((opt.type == NULL || opt.type[h.type])
 			&& (opt.handle == ~0U || opt.handle == h.handle)
 			&& !((opt.flags & FLAG_QUIET) && (h.type == 126 || h.type == 127))
