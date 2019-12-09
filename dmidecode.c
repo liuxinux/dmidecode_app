@@ -5676,11 +5676,12 @@ int main(int argc, char * const argv[])
 	if (!(opt.flags & FLAG_NO_SYSFS)
 	 && (buf = read_file(0, &size, SYS_ENTRY_FILE)) != NULL)
 	{
+        printf("%s:%d:liuxin#2:buf=%s\n",__func__,__LINE__,buf);
 		if (!(opt.flags & FLAG_QUIET))
 			printf("Getting SMBIOS data from sysfs.\n");
 		if (size >= 24 && memcmp(buf, "_SM3_", 5) == 0)
 		{
-            printf("%s:%d:liuxin#2:buf=%s\n",__func__,__LINE__,buf);
+            printf("%s:%d:liuxin#3:buf=%s\n",__func__,__LINE__,buf);
 			if (smbios3_decode(buf, SYS_TABLE_FILE, FLAG_NO_FILE_OFFSET))
 				found++;
 		}
