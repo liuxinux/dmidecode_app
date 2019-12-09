@@ -282,6 +282,7 @@ int parse_command_line(int argc, char * const argv[])
 	};
 
 	while ((option = getopt_long(argc, argv, optstring, longopts, NULL)) != -1)
+        printf("%s:%d:liuxin#1:optarg=%s\n",__func__,__LINE__,optarg);
 		switch (option)
 		{
 			case 'B':
