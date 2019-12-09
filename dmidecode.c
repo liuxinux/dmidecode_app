@@ -5376,7 +5376,7 @@ static int smbios3_decode(u8 *buf, const char *devmem, u32 flags)
 	u64 offset;
 
 	/* Don't let checksum run beyond the buffer */
-    printf("%s:%d:liuxin#2: buf[0x06]=%s\n",__func__,__LINE__,buf[0x06]);
+    printf("%s:%d:liuxin#2: buf[0x06]=%d\n",__func__,__LINE__,buf[0x06]);
 	if (buf[0x06] > 0x20)
 	{
 		fprintf(stderr,
@@ -5388,9 +5388,9 @@ static int smbios3_decode(u8 *buf, const char *devmem, u32 flags)
 	if (!checksum(buf, buf[0x06]))
 		return 0;
 
-    printf("%s:%d:liuxin#2: buf[0x07]=%s\n",__func__,__LINE__,buf[0x07]);
-    printf("%s:%d:liuxin#2: buf[0x08]=%s\n",__func__,__LINE__,buf[0x08]);
-    printf("%s:%d:liuxin#2: buf[0x09]=%s\n",__func__,__LINE__,buf[0x09]);
+    printf("%s:%d:liuxin#2: buf[0x07]=%d\n",__func__,__LINE__,buf[0x07]);
+    printf("%s:%d:liuxin#2: buf[0x08]=%d\n",__func__,__LINE__,buf[0x08]);
+    printf("%s:%d:liuxin#2: buf[0x09]=%d\n",__func__,__LINE__,buf[0x09]);
 	ver = (buf[0x07] << 16) + (buf[0x08] << 8) + buf[0x09];
 	if (!(opt.flags & FLAG_QUIET))
 		printf("SMBIOS %u.%u.%u present.\n",
