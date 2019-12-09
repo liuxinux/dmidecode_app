@@ -5376,13 +5376,13 @@ static int smbios3_decode(u8 *buf, const char *devmem, u32 flags)
 	u64 offset;
 
 	/* Don't let checksum run beyond the buffer */
-    printf("%s:%d:liuxin#2: buf[0x00]=%d\n",__func__,__LINE__,buf[0x00]);
-    printf("%s:%d:liuxin#2: buf[0x01]=%d\n",__func__,__LINE__,buf[0x01]);
-    printf("%s:%d:liuxin#2: buf[0x02]=%d\n",__func__,__LINE__,buf[0x02]);
-    printf("%s:%d:liuxin#2: buf[0x03]=%d\n",__func__,__LINE__,buf[0x03]);
-    printf("%s:%d:liuxin#2: buf[0x04]=%d\n",__func__,__LINE__,buf[0x04]);
-    printf("%s:%d:liuxin#2: buf[0x05]=%d\n",__func__,__LINE__,buf[0x05]);
-    printf("%s:%d:liuxin#2: buf[0x06]=%d\n",__func__,__LINE__,buf[0x06]);
+    printf("%s:%d:liuxin#2: buf[0x00]=%x\n",__func__,__LINE__,buf[0x00]);
+    printf("%s:%d:liuxin#2: buf[0x01]=%x\n",__func__,__LINE__,buf[0x01]);
+    printf("%s:%d:liuxin#2: buf[0x02]=%x\n",__func__,__LINE__,buf[0x02]);
+    printf("%s:%d:liuxin#2: buf[0x03]=%x\n",__func__,__LINE__,buf[0x03]);
+    printf("%s:%d:liuxin#2: buf[0x04]=%x\n",__func__,__LINE__,buf[0x04]);
+    printf("%s:%d:liuxin#2: buf[0x05]=%x\n",__func__,__LINE__,buf[0x05]);
+    printf("%s:%d:liuxin#2: buf[0x06]=%x\n",__func__,__LINE__,buf[0x06]);
 	if (buf[0x06] > 0x20)
 	{
 		fprintf(stderr,
