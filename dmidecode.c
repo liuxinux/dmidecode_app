@@ -5164,6 +5164,7 @@ static void dmi_table_decode(u8 *buf, u32 len, u16 num, u16 ver, u32 flags)
 	u8 *data;
 	int i = 0;
 
+    printf("%s:%d:liuxin#2: buf=%s \n",__func__,__LINE__,buf);
 	data = buf;
 	while ((i < num || !num)
 	    && data + 4 <= buf + len) /* 4 is the length of an SMBIOS structure header */
