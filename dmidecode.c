@@ -5398,6 +5398,7 @@ static int smbios3_decode(u8 *buf, const char *devmem, u32 flags)
     printf("%s:%d:liuxin#2: buf[0x08]=%d\n",__func__,__LINE__,buf[0x08]);
     printf("%s:%d:liuxin#2: buf[0x09]=%d\n",__func__,__LINE__,buf[0x09]);
 	ver = (buf[0x07] << 16) + (buf[0x08] << 8) + buf[0x09];
+    printf("%s:%d:liuxin#2: ver=%x\n",__func__,__LINE__,ver);
 	if (!(opt.flags & FLAG_QUIET))
 		printf("SMBIOS %u.%u.%u present.\n",
 		       buf[0x07], buf[0x08], buf[0x09]);
@@ -5628,6 +5629,8 @@ int main(int argc, char * const argv[])
 		goto exit_free;
 	}
 
+    
+    printf("%s:%d:liuxin#:opt.flags=0x%x\n",__func__,__LINE__,opt.flags);
 	if (opt.flags & FLAG_HELP)
 	{
 		print_help();
